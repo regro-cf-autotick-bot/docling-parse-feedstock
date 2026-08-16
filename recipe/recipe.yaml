@@ -1,6 +1,6 @@
 context:
   name: docling-parse
-  version: 7.9.0
+  version: 7.13.0
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/DS4SD/docling-parse/archive/refs/tags/v${{ version }}.zip
-  sha256: b5751f0442b504f3770429c7b509a3b3e55989660db9d0d03b351e4567000265
+  sha256: b88c82ecff129200df2fe26a257f8b80dbd9b4891163da4bfb243dccaf96b68a
   patches:
     - fix-utfcpp.patch
 
@@ -55,12 +55,11 @@ requirements:
     - freetype
   run:
     - python
-    - tabulate >=0.9.0,<1.0.0
     - ${{ "pywin32 >=305" if win }}
     - pillow >=10.0.0,<13.0.0
     - pydantic >=2.0.0
     - docling-core >=2.85.0,<3.0.0
-    - blend2d
+    - pywin32-on-windows >=305
 tests:
   - python:
       imports:
